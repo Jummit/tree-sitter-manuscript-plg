@@ -1,0 +1,17 @@
+{
+  "name": "tree-sitter-sibelius-plg",
+  "version": "0.0.0",
+  "description": "Sibelius plg format grammar for node-tree-sitter",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/tree-sitter generate && npm install && node_modules/.bin/tree-sitter test"
+  },
+  "author": "Thomas Weber",
+  "devDependencies": {
+    "tree-sitter-cli": "^0.13.10"
+  },
+  "keywords": [
+    "parser",
+    "lexer"
+  ]
+}

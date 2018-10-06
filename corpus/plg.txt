@@ -1,0 +1,139 @@
+============================================
+Dialog in plg
+============================================
+﻿
+{
+	testDialog "Dialog"
+	{
+		Title "New Dialog"
+	}
+}
+
+---
+
+(data (table
+  (def (name) (value) (table
+    (def (name) (value))))))
+
+
+============================================
+Dialog as root in msd files
+============================================
+﻿
+testDialog "Dialog"
+{
+    Title "New Dialog"
+}
+
+---
+
+(data
+  (def (name) (value) (table
+    (def (name) (value)))))
+
+
+============================================
+Plg hash tables
+============================================
+
+{
+    n {
+        "a"
+        { "b" }
+    }
+}
+
+---
+
+(data (table
+  (def (name) (table
+    (value) (table (value))))))
+
+============================================
+Mixed content hash tables
+============================================
+
+{
+    NewData "foobar"
+    {
+        b "a"
+        {
+             "1"
+             "2"
+        }
+         "00"
+        c "bar"
+    }
+}
+
+---
+
+(data (table
+  (def (name) (value) (table
+    (def (name) (value) (table
+        (value) (value)))
+    (value)
+    (def (name) (value))))))
+
+============================================
+Function in plg
+============================================
+
+{
+    f "(){;}"
+}
+
+---
+
+(data (table
+  (def (name) (function))))
+
+============================================
+Functions and dialogs in plg
+============================================
+
+
+{
+	TestDialog "Dialog" {}
+	Run "
+	(
+	foo, bar
+	) {
+		;
+  }
+	"
+}
+
+---
+
+(data (table
+  (def (name) (value) (table))
+  (def (name) (function))))
+
+============================================
+GLOBAL.mss
+============================================
+
+foo "bar"
+bar "baz"
+
+---
+
+(data
+  (def (name) (value))
+  (def (name) (value)))
+
+============================================
+plg names
+============================================
+
+{
+	// "foo"
+	1/2 "bar"
+}
+
+---
+
+(data (table
+  (def (name) (value))
+  (def (name) (value))))
