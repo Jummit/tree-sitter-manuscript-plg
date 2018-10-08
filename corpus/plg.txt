@@ -86,7 +86,7 @@ Function in plg
 ---
 
 (data (table
-  (def (name) (function))))
+  (def (name) (value))))
 
 ============================================
 Functions and dialogs in plg
@@ -108,7 +108,7 @@ Functions and dialogs in plg
 
 (data (table
   (def (name) (value) (table))
-  (def (name) (function))))
+  (def (name) (value))))
 
 ============================================
 GLOBAL.mss

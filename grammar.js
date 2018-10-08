@@ -16,24 +16,20 @@ module.exports = grammar({
 
     table: $ => seq(
       '{',
-      repeat(choice($.value, $.def, $.table)),
+      repeat(choice($._quoted_value, $.def, $.table)),
       '}'
     ),
 
     def: $ => prec.right(seq(
       $.name,
       optional(choice(
-        seq(optional($.value), $.table),
-        $.value,
-        $.function,
+        seq(optional($._quoted_value), $.table),
+        $._quoted_value,
       ))
     )),
 
     name: $ => /[a-zA-Z0-9/.-_]+/,
-
-    value: $ => seq('"', /[^"]*/, '"'),
-
-    //function: $ => /"\s*\(.*{.*}\s*"/s,
-    function: $ => seq(/"\s*\([^")]*\)\s*{[^"]+}\s*"/),
+    _quoted_value: $ => seq('"', optional($.value), '"'),
+    value: $ => /[^"]+/,
   }
 });
