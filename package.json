@@ -1,5 +1,5 @@
 {
-  "name": "tree-sitter-sibelius-plg",
+  "name": "tree-sitter-manuscript-plg",
   "version": "0.0.0",
   "description": "Sibelius plg format grammar for node-tree-sitter",
   "main": "index.js",
@@ -10,8 +10,13 @@
   "devDependencies": {
     "tree-sitter-cli": "^0.13.10"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:notengrafik/tree-sitter-manuscript-plg.git"
+  },
   "keywords": [
     "parser",
     "lexer"
-  ]
+  ],
+  "homepage": "https://github.com/notengrafik/tree-sitter-manuscript-plg"
 }
