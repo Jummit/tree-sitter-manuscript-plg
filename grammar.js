@@ -28,7 +28,7 @@ module.exports = grammar({
       ))
     )),
 
-    name: $ => /[a-zA-Z0-9/.-_]+/,
+    name: $ => /[a-zA-Z0-9/.\-_]+/,
     _quoted_value: $ => seq('"', optional($.value), '"'),
     value: $ => /[^"]+/,
   }

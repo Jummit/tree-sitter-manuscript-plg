@@ -137,3 +137,16 @@ plg names
 (data (table
   (def (name) (value))
   (def (name) (value))))
+
+============================================
+invalid names
+============================================
+
+{
+	@
+}
+
+---
+
+(data (table
+  (ERROR (UNEXPECTED '@'))))
