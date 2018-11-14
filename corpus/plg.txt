@@ -12,8 +12,8 @@ Dialog in plg
 ---
 
 (data (table
-  (def (name) (value) (table
-    (def (name) (value))))))
+  (def (label) (value) (table
+    (def (label) (value))))))
 
 
 ============================================
@@ -28,8 +28,8 @@ testDialog "Dialog"
 ---
 
 (data
-  (def (name) (value) (table
-    (def (name) (value)))))
+  (def (label) (value) (table
+    (def (label) (value)))))
 
 
 ============================================
@@ -46,7 +46,7 @@ Plg hash tables
 ---
 
 (data (table
-  (def (name) (table
+  (def (label) (table
     (value) (table (value))))))
 
 ============================================
@@ -69,11 +69,11 @@ Mixed content hash tables
 ---
 
 (data (table
-  (def (name) (value) (table
-    (def (name) (value) (table
+  (def (label) (value) (table
+    (def (label) (value) (table
         (value) (value)))
     (value)
-    (def (name) (value))))))
+    (def (label) (value))))))
 
 ============================================
 Function in plg
@@ -86,7 +86,7 @@ Function in plg
 ---
 
 (data (table
-  (def (name) (value))))
+  (function_def (function_label) (function))))
 
 ============================================
 Functions and dialogs in plg
@@ -95,8 +95,7 @@ Functions and dialogs in plg
 
 {
 	TestDialog "Dialog" {}
-	Run "
-	(
+	Run "(
 	foo, bar
 	) {
 		;
@@ -107,8 +106,8 @@ Functions and dialogs in plg
 ---
 
 (data (table
-  (def (name) (value) (table))
-  (def (name) (value))))
+  (def (label) (value) (table))
+  (function_def (function_label) (function))))
 
 ============================================
 GLOBAL.mss
@@ -120,26 +119,28 @@ bar "baz"
 ---
 
 (data
-  (def (name) (value))
-  (def (name) (value)))
+  (def (label) (value))
+  (def (label) (value)))
 
 ============================================
-plg names
+plg labels
 ============================================
 
 {
 	// "foo"
 	1/2 "bar"
+	-// "baz"
 }
 
 ---
 
 (data (table
-  (def (name) (value))
-  (def (name) (value))))
+  (doc_def (doclabel) (docstring))
+  (def (label) (value))
+  (def (label) (value))))
 
 ============================================
-invalid names
+invalid labels
 ============================================
 
 {
