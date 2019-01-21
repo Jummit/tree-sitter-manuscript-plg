@@ -60,6 +60,8 @@ module.exports = grammar({
     docstring: $ => /"[^"]*"/,
     empty_value: $ => '""',
     _quoted_value: $ => seq('"', $.value, '"'),
+    // The following approach is to create patterns that do not match functions
+    // so we can handle functions separately.
     value: $ => choice(
       stringStartingWith(/[^("]/),
       stringStartingWith(/[^"]/, /\([^{"]*/),
@@ -69,6 +71,6 @@ module.exports = grammar({
     // possible to inject function syntax highlighting, which is defined without
     // the quotes:
     _quoted_function: $ => seq('"', $.function, '"'),
-    function: $ => /\([^"]*{[^"]*/,
+    function: $ => /\([^"]*\{[^"]*/,
   }
 });
