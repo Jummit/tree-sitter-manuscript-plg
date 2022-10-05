@@ -4,7 +4,8 @@
   "description": "Sibelius plg format grammar for node-tree-sitter",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/tree-sitter generate && node-gyp build && node_modules/.bin/tree-sitter test"
+    "build": "npx tree-sitter generate && node-gyp configure && node-gyp build",
+    "test": "npx tree-sitter generate && node-gyp configure && node-gyp build && npx tree-sitter test"
   },
   "author": "Thomas Weber",
   "devDependencies": {
