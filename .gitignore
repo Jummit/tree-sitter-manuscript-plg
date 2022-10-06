@@ -1,6 +1,2 @@
 node_modules
-# We ignore everything that will be created by building
 build
-src
-binding.gyp
-index.js
