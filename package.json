@@ -2,14 +2,14 @@
   "name": "tree-sitter-manuscript-plg",
   "version": "0.1.0",
   "description": "Sibelius plg format grammar for node-tree-sitter",
-  "main": "index.js",
+  "main": "bindings/node",
   "scripts": {
     "build": "npx tree-sitter generate && node-gyp configure && node-gyp build",
     "test": "npx tree-sitter generate && node-gyp configure && node-gyp build && npx tree-sitter test"
   },
   "author": "Thomas Weber",
   "devDependencies": {
-    "tree-sitter-cli": "^0.20.7"
+    "tree-sitter-cli": "^0.19.0"
   },
   "dependencies": {
     "nan": "^2.16.0"
